@@ -4,7 +4,6 @@ def init_db():
     conn = sqlite3.connect('database.db')
     cursor = conn.cursor()
     
-    # Создание таблицы для белого списка пользователей
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS users (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -12,7 +11,6 @@ def init_db():
         )
     ''')
     
-    # Создание таблицы для токенов API
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS tokens (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
